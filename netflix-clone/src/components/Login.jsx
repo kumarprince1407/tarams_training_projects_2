@@ -23,6 +23,21 @@ const Login = () => {
   const auth = getAuth();
 
   console.log(auth);
+
+  //Form validtion
+  const validation = (fieldName, value) => {
+    switch (fieldName) {
+      case "email":
+        return value.match(
+          /^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,})$/
+        );
+      case "password":
+        return value.length >= 6;
+      default:
+        break;
+    }
+  };
+
   const ctaClickHandler = (e) => {
     e.preventDefault();
     if (page) {

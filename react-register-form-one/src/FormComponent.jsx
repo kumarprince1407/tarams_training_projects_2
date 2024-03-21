@@ -6,7 +6,7 @@ import { useNavigate, useParams, useLocation } from "react-router-dom";
 
 function FormComponent({ initialUserInput, handleFunctionClick }) {
   const navigate = useNavigate();
-  const [userInput, setUserInput] = useState(initialUserInput);
+  const [userInput, setUserInput] = useState(initialUserInput); //check - don't set prop as a state initial value
   const [formValid, setFormValid] = useState(true);
 
   //change
@@ -17,11 +17,11 @@ function FormComponent({ initialUserInput, handleFunctionClick }) {
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const inputValue = type === "checkbox" ? checked : value;
+    const inputValue = type === "checkbox" ? checked : value; //review it
 
     setUserInput((prevState) => ({
       ...prevState,
-      [name]: inputValue,
+      [name]: inputValue, //Using [] bracket is a dynamic way
     }));
   };
 
@@ -35,7 +35,9 @@ function FormComponent({ initialUserInput, handleFunctionClick }) {
 
     setFormValid(true);
     //try-catch block removed
-    let response = await handleFunctionClick(userInput);
+    //TODO:
+    let response = await handleFunctionClick(userInput); //use async await only for api calls/ async operations
+
     if (response.status === 200) {
       console.log("Data sent successfully");
       navigate(`/home/${userInput.username}`);

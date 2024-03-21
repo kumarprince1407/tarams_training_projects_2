@@ -12,18 +12,26 @@ function EditPage() {
   //Change
   const location = useLocation();
 
-  const { id, username, task } = useParams();
+  const { id, username } = useParams();
 
   const navigate = useNavigate();
 
   //change 2
+  // const [userInput, setUserInput] = useState({
+  //   userid: task ? task.userid : "",
+  //   title: task ? task.title : "",
+  //   completed: false,
+  //   id: id,
+  //   username: username,
+  // });
   const [userInput, setUserInput] = useState({
-    userid: task ? task.userid : "",
-    title: task ? task.title : "",
+    userid: "",
+    title: "",
     completed: false,
     id: id,
     username: username,
   });
+  // console.log("task", task);
 
   //Create a ref for Textfield input
   const titleInputRef = useRef(null);

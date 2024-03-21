@@ -1,0 +1,85 @@
+/*style.css*/
+@font-face {
+  font-family: "MemphisRiver";
+  src: url(fonts/MemphisRiver.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roblox";
+  src: url(fonts/Roblox-Font-Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roblox";
+  src: url(fonts/Roblox-Font-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(fonts/Roboto/Roboto-BlackItalic.ttf);
+}
+
+body {
+  background: #1a2980;
+  background: -webkit-linear-gradient(to right, #26d0ce, #1a2980);
+  background: linear-gradient(to right, #26d0ce, #1a2980);
+}
+
+.header-main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-main-nav ul {
+  display: flex;
+
+  list-style: none;
+  padding: 0;
+}
+
+.header-main-nav ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.header-main-nav ul li a {
+  font-family: "Roboto";
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Roblox", sans-serif;
+
+  /* sans-serif is the fallback font that will be applied in case the MemphisRver font applications fails for some reason  */
+  font-size: 6em;
+  font-weight: bold;
+}
+h2 {
+  font-family: "MemphisRiver", sans-serif;
+  font-size: 7em;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #fff;
+}
+
+p {
+  font-family: "Roblox", Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  max-width: 50%;
+  text-align: center;
+  color: #fff;
+}
