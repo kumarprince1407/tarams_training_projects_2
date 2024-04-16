@@ -1,6 +1,8 @@
 /* HomePage.css */
 body {
   background-color: rgb(164, 189, 235);
+  background: -webkit-linear-gradient(to right, #26d0ce, #1a2980);
+  background: linear-gradient(to right, #26d0ce, #1a2980);
 }
 
 .headingContainer {
@@ -83,7 +85,7 @@ body {
 }
 
 .homeIntro {
-  color: rgb(99, 99, 233);
+  color: rgb(52, 52, 119);
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -96,4 +98,12 @@ body {
   right: 0;
   width: 100%;
   border: 1px solid #73ad21;
+}
+
+/* Center loader container */
+.loader-container {
+  display: flex;
+  justify-content: center; /* Horizontal center alignment */
+  align-items: center; /* Vertical center alignment */
+  height: 100%; /* Set height to match table height */
 }

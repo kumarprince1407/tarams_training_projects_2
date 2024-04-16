@@ -16,14 +16,6 @@ function EditPage() {
 
   const navigate = useNavigate();
 
-  //change 2
-  // const [userInput, setUserInput] = useState({
-  //   userid: task ? task.userid : "",
-  //   title: task ? task.title : "",
-  //   completed: false,
-  //   id: id,
-  //   username: username,
-  // });
   const [userInput, setUserInput] = useState({
     userid: "",
     title: "",
@@ -31,7 +23,6 @@ function EditPage() {
     id: id,
     username: username,
   });
-  // console.log("task", task);
 
   //Create a ref for Textfield input
   const titleInputRef = useRef(null);
@@ -40,21 +31,11 @@ function EditPage() {
     navigate(`/home/${username}`);
   };
 
-  const initialUserInput = {
-    userid: "",
-    title: "",
-    completed: false,
-    id: id, //Pass the id received from useParams
-    username: username, //Pass the title received from useParams
-  };
-
-  console.log("Initial user input:", initialUserInput);
-
   const handleFunctionClick = async (userData) => {
     try {
       const response = await axios.patch(
         `http://localhost:3002/todolist/${userData.username}/${userData.id}`,
-        userData
+        userData //The userData servers as the payload or data to be sent as part of the PATCH request.
       );
       return response;
     } catch (error) {
@@ -86,7 +67,7 @@ function EditPage() {
       }
     };
     fetchTaskDetails();
-  }, [id, username]);
+  }, [id, username]); //dependencies of UseEffect
 
   return (
     <>

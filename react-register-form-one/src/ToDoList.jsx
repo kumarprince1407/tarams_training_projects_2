@@ -26,6 +26,7 @@ function ToDoList() {
     navigate(`/home/${username}`);
   };
 
+  //Defining an object 'initialuserInput' with the initial values for form inputs
   const initialUserInput = {
     userid: "",
     title: "",
@@ -33,13 +34,14 @@ function ToDoList() {
     username: username, //Set the username here
   };
 
+  //The below function makes a POST request to the backend API to add the task
   const handleFunctionClick = async (userData) => {
     try {
       const response = await axios.post(
         `http://localhost:3002/todolist/${userData.username}`,
-        userData
+        userData //The userData servers as the payload or data to be sent as part of the POST request.
       );
-      return response;
+      return response; //Holds the server's response
     } catch (error) {
       console.log("Error sending data:", error);
     }
@@ -79,6 +81,7 @@ function ToDoList() {
                 initialUserInput={initialUserInput}
                 handleFunctionClick={handleFunctionClick}
               />
+              {/* It passes the initialUserInput & handleFunctionClick as a prop to FormComponent */}
             </div>
           </div>
         </div>
