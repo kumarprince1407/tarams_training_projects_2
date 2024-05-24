@@ -20,7 +20,7 @@ export const fetchPhotosSuccess = (photos) => {
   };
 };
 
-export const fetchUsersFailure = (error) => {
+export const fetchPhotosFailure = (error) => {
   return {
     type: FETCH_PHOTOS_FAILURE,
     payload: error,
@@ -30,7 +30,7 @@ export const fetchUsersFailure = (error) => {
 //Thunk action creator
 export const fetchPhotos = () => {
   return (dispatch) => {
-    dispatch(fetchPhotosRequest);
+    dispatch(fetchPhotosRequest());
     axios
       .get("https://jsonplaceholder.typicode.com/photos")
       .then((response) => {
@@ -39,7 +39,7 @@ export const fetchPhotos = () => {
       })
       .catch((error) => {
         const errorMsg = error.message;
-        dispatch(fetchUsersFailure(errorMsg));
+        dispatch(fetchPhotosFailure(errorMsg));
       });
   };
 };

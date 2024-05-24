@@ -1,10 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"; //change
 import { fetchPhotos } from "../redux";
-function PhotoContainer({ fetchPhotos, photoData }) {
+
+// function PhotoContainer({ fetchPhotos }) {
+function PhotoContainer() {
+  const dispatch = useDispatch();
+
+  const photoData = useSelector((state) => state);
+
   useEffect(() => {
-    fetchPhotos();
-  }, []);
+    dispatch(fetchPhotos());
+  }, [dispatch]); //works without 'dispatch' as well
 
   return (
     <div>
@@ -36,16 +43,17 @@ function PhotoContainer({ fetchPhotos, photoData }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    photoData: state,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     photoData: state,
+//   };
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchPhotos: () => dispatch(fetchPhotos()),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchPhotos: () => dispatch(fetchPhotos()),
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoContainer);
+//export default connect(mapStateToProps, mapDispatchToProps)(PhotoContainer);
+export default PhotoContainer;
