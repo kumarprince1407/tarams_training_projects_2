@@ -1,0 +1,60 @@
+/* style.css */
+
+.mainContainer {
+  border: 1px solid black;
+  padding: 20px /*Add padding inside the container*/;
+  margin: 10px; /*Add margin outside the container*/
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*Centers items horizontally*/
+  justify-content: center; /*Centers items vertically*/
+  height: 80vh;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px 10px 10px 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  background-color: #c8deec;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Large button styles */
+.btn-large {
+  padding: 20px 40px;
+  font-size: 18px;
+}
+
+/* Small button styles */
+.btn-small {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Primary button styles */
+.btn-primary {
+  background-color: rgb(164, 164, 241);
+  color: white;
+}
+
+/* Secondary button styles */
+.btn-secondary {
+  background-color: rgb(112, 231, 112);
+  color: white;
+}
+
+/* Hover effects for buttons */
+.btn:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-primary:hover {
+  background-color: darkblue;
+}
+
+.btn-secondary:hover {
+  background-color: darkgreen;
+}
